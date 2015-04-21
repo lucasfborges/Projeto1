@@ -1,16 +1,11 @@
-Este é a expĺicação do projeto
-
-Usa o formato markdown
+Universidade Federal de São João Del Rei - Minas Gerais
+  Ciência da Computação
+  
+FERRAMENTAS DE GERENCIAMENTO DE SOFTWARE 
 =========================
+Professor Flávio Schiavoni
+Participantes:
 
 
 
 
-
-
-
-1 - teste  
-2 - teste2  
-3 - maios uma  
-
-Foi
