@@ -1,0 +1,23 @@
+.sch-ganttpanel .x-grid-cell {
+    height              : 30px;
+}
+
+.sch-zone {
+    background-image : none;
+    background-color : rgba(239, 246, 252, 0.5);
+}
+
+.taskTip strong {
+    font-weight  : bold;
+    margin-right : 5px;
+}
+
+.icon-add {
+    background : url(images/add.png) no-repeat left center !important;
+}
+
+.x-tree-node-text {
+    text-transform : uppercase;
+    color          : #686868;
+}
+
