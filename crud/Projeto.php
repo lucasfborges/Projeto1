@@ -49,6 +49,7 @@
                 $('#fm').form('submit', {
                     url: url,
                     onSubmit: function () {
+
                         return $(this).form('validate');
                     },
                     success: function (result) {
@@ -120,7 +121,7 @@
             </form>
         </div>
         <div id="dlg2-buttons">
-            <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">Salvar</a>
+            <a href="enviarEmail.php" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">Salvar</a>
             <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg2').dialog('close')">Fechar</a>
         </div>
     </body>
