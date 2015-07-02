@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Abr-2015 às 16:40
--- Versão do servidor: 5.6.24
--- PHP Version: 5.5.24
+-- Generation Time: 02-Jul-2015 às 19:48
+-- Versão do servidor: 5.6.16
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `fases` (
-  `descricaoFase` varchar(250) NOT NULL
+  `descricaoFase` varchar(250) NOT NULL,
+  PRIMARY KEY (`descricaoFase`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -35,8 +36,54 @@ CREATE TABLE IF NOT EXISTS `fases` (
 --
 
 INSERT INTO `fases` (`descricaoFase`) VALUES
-('fase 1'),
-('fase 3');
+('blbalbalba'),
+('esse nova fase');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gantt_links`
+--
+
+CREATE TABLE IF NOT EXISTS `gantt_links` (
+  `id` int(11) NOT NULL,
+  `source` int(11) NOT NULL,
+  `target` int(11) NOT NULL,
+  `type` varchar(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `gantt_links`
+--
+
+INSERT INTO `gantt_links` (`id`, `source`, `target`, `type`) VALUES
+(1, 1, 2, '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `gantt_tasks`
+--
+
+CREATE TABLE IF NOT EXISTS `gantt_tasks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(255) NOT NULL,
+  `start_date` datetime NOT NULL,
+  `duration` int(11) NOT NULL,
+  `progress` float NOT NULL,
+  `sortorder` int(11) NOT NULL,
+  `parent` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `gantt_tasks`
+--
+
+INSERT INTO `gantt_tasks` (`id`, `text`, `start_date`, `duration`, `progress`, `sortorder`, `parent`) VALUES
+(1, 'Project #1', '2015-11-30 00:00:00', 11, 0.6, 0, 0),
+(2, 'Projeto SalvaÃ§Ã£o', '2015-11-30 00:00:00', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -50,7 +97,8 @@ CREATE TABLE IF NOT EXISTS `pessoa` (
   `TIPO_USUARIO` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `cpf` varchar(50) NOT NULL
+  `cpf` varchar(50) NOT NULL,
+  PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -58,23 +106,8 @@ CREATE TABLE IF NOT EXISTS `pessoa` (
 --
 
 INSERT INTO `pessoa` (`login`, `password`, `TIPO_USUARIO`, `nome`, `email`, `cpf`) VALUES
+('lucasfborges', '0000', 1, 'nome', 'lucasfborges@gmail.com', '12345678900'),
 ('sanugav', '123', 1, 'nome', 'juliocto2011@hotmail.com', '08235855658');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `fases`
---
-ALTER TABLE `fases`
-  ADD PRIMARY KEY (`descricaoFase`);
-
---
--- Indexes for table `pessoa`
---
-ALTER TABLE `pessoa`
-  ADD PRIMARY KEY (`login`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
