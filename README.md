@@ -7,7 +7,8 @@ FERRAMENTAS DE GERENCIAMENTO DE SOFTWARE
 Professor Flávio Schiavoni
 
 Participantes:
-
+- Lucas x3
+- Elkson x1
 
 
 
